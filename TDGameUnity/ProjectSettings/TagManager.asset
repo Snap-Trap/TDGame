@@ -12,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - pathLayer
+  - 
   - groundLayer
   - enemyLayer
   - endOfPathLayer
-  - 
+  - pathLayer
   - 
   - 
   - 
