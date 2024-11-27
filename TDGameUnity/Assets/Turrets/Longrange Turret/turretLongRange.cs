@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turretShortRange : turretOffense
+public class turretLongRange : turretOffense
 {
-    private GameObject target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,6 @@ public class turretShortRange : turretOffense
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
