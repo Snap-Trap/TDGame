@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
-    public float speed, health;
+    public float speed;
 
     private Vector3 walkPoint, enemyDestination;
 
