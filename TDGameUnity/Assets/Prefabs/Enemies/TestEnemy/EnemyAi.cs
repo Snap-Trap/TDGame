@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
-    public float speed;
+    EnemyStats enemyStats;
+
+    private float distanceTraveled;
 
     private Vector3 walkPoint, enemyDestination;
 
@@ -20,11 +22,14 @@ public class EnemyAi : MonoBehaviour
         whatIsPath = LayerMask.GetMask("pathLayer");
         enemyDestination = GameObject.Find("EnemyDestination").transform.position;
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
     }
 
     private void Update()
-    {
+    {   
+        distanceTraveled += agent.velocity.magnitude * Time.deltaTime;
+
+        Debug.Log(distanceTraveled);
+
         if (!walkpointSet)
         {
             SearchWalkPoint();
