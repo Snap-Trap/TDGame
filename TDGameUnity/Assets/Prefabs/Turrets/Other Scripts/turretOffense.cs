@@ -7,9 +7,12 @@ using UnityEngine;
 public class turretOffense : turretBase
 {
     [SerializeField] protected int attackrate;
-    [SerializeField] protected int damage;
-    [SerializeField] protected bool explosive;
     [SerializeField] protected int blastradius;
+    [SerializeField] protected int damage;
+
+    [SerializeField] protected bool explosive;
+
+    [SerializeField] protected LayerMask enemyMask;
 
     protected bool canFire = true;
     protected bool canShoot;
@@ -22,7 +25,7 @@ public class turretOffense : turretBase
     // Start is called before the first frame update
     void Start()
     {
-        whatIsEnemy = ~LayerMask.GetMask("enemyLayer");
+
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         int furthestdistance = 1000000000;
-        foreach (Collider target in Physics.OverlapSphere(transform.position, range, 1<<8))
+        foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
             if (target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft < furthestdistance)
@@ -53,7 +56,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         int furthestdistance = 0;
-        foreach (Collider target in Physics.OverlapSphere(transform.position, range, 1 << 8))
+        foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
             if (target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft > furthestdistance)
             {
@@ -69,7 +72,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         int highestHealth = 0;
-        foreach (Collider target in Physics.OverlapSphere(transform.position, range, 1 << 8))
+        foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
             if (target.gameObject.GetComponent<enemyPlaceholder>().Health > highestHealth)
@@ -90,7 +93,7 @@ public class turretOffense : turretBase
         {
             GameObject firingtarget = null;
 
-            if (Physics.OverlapSphere(transform.position, range, 1<<8).Count() != 0)
+            if (Physics.OverlapSphere(transform.position, range, enemyMask).Count() != 0)
             {
 
                 if (firingMode == 1)
