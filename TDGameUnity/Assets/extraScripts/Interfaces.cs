@@ -7,11 +7,6 @@ public class Interfaces : MonoBehaviour
 
 }
 
-public interface IPathfinding
-{
-    Vector3 FindPath();
-}
-
 public interface IDamageable
 {
     void TakeDamage(float damage);

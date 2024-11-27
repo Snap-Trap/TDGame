@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAi : MonoBehaviour
+public class EnemyAi : MonoBehaviour, IDamageable
 {
     EnemyStats enemyStats;
 
@@ -52,6 +52,16 @@ public class EnemyAi : MonoBehaviour
         if (other.gameObject.CompareTag("EndOfPath"))
         {
            StartCoroutine(WaitBeforeDestroy());
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        enemyStats.health -= damage;
+        if (enemyStats.health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("THY END IS NOW!!!");
         }
     }
 
