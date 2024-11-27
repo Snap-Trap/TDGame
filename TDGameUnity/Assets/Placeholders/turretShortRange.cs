@@ -8,16 +8,12 @@ public class turretShortRange : turretOffense
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("Fire");
     }
 
     // Update is called once per frame
     void Update()
     {
-        target = getFurthest(range);
-        if (target != null)
-        {
-            Debug.Log(target.name);
-        }
+
     }
 }

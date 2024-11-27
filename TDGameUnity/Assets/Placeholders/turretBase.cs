@@ -6,7 +6,7 @@ public class turretBase : MonoBehaviour
 {
 
     [SerializeField] protected int range;
-
+    
     protected int costLevel1;
     protected int costLevel2;
     protected int costLevel3;
