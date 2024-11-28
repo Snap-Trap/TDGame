@@ -45,13 +45,13 @@ public class turretOffense : turretBase
     protected GameObject getFirst(float range)
     {
         GameObject furthestTarget = null;
-        int furthestdistance = 1000000000;
+        float furthestdistance = 1000000000;
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
-            if (target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft < furthestdistance)
+            if (target.gameObject.GetComponent<EnemyAi>().distanceTraveled < furthestdistance)
             {
-                    furthestdistance = target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft;
+                    furthestdistance = target.gameObject.GetComponent<EnemyAi>().distanceTraveled;
                     furthestTarget = target.gameObject;
                     
             }
@@ -63,12 +63,12 @@ public class turretOffense : turretBase
     protected GameObject getLast(float range)
     {
         GameObject furthestTarget = null;
-        int furthestdistance = 0;
+        float furthestdistance = 0;
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
-            if (target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft > furthestdistance)
+            if (target.gameObject.GetComponent<EnemyAi>().distanceTraveled > furthestdistance)
             {
-                furthestdistance = target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft;
+                furthestdistance = target.gameObject.GetComponent<EnemyAi>().distanceTraveled;
                 furthestTarget = target.gameObject;
 
             }
@@ -83,9 +83,9 @@ public class turretOffense : turretBase
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
-            if (target.gameObject.GetComponent<enemyPlaceholder>().Health > highestHealth)
+            if (target.gameObject.GetComponent<EnemyStats>().health > highestHealth)
             {
-                highestHealth = target.gameObject.GetComponent<enemyPlaceholder>().distanceLeft;
+                highestHealth = target.gameObject.GetComponent<EnemyStats>().health;
                 furthestTarget = target.gameObject;
 
             }
