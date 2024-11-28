@@ -114,52 +114,51 @@ public class turretOffense : turretBase
     IEnumerator Fire()
     {
         Debug.Log("Firing");
-        if (canFire)
+
+        GameObject firingtarget = null;
+
+        if (Physics.OverlapSphere(transform.position, range, enemyMask).Count() != 0)
         {
-            GameObject firingtarget = null;
 
-            if (Physics.OverlapSphere(transform.position, range, enemyMask).Count() != 0)
+            if (firingMode == 1)
             {
-
-                if (firingMode == 1)
-                {
-                    firingtarget = getToughest(range);
-                }
-                else if (firingMode == 2)
-                {
-                    firingtarget = getLast(range);
-                }
-                else
-                {
-                    firingtarget = getFirst(range);
-                }
-
-                if (!explosive)
-                {
-                    firingtarget.GetComponent<EnemyStats>().health =- Mathf.Round(damage);
-                }
-                else
-                {
-                    foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, 1 << 8))
-                    {
-                        firingtarget.GetComponent <EnemyStats>().health =- Mathf.Round(damage);
-                    }
-                }
-
-                yield return new WaitForSeconds(10.0f / attackrate);
-
-                StartCoroutine(Fire());
+                firingtarget = getToughest(range);
+            }
+            else if (firingMode == 2)
+            {
+                firingtarget = getLast(range);
             }
             else
             {
-                yield return new WaitForSeconds(0.2f);
-
-
-
-                StartCoroutine(Fire());
+                firingtarget = getFirst(range);
             }
 
+            if (!explosive)
+            {
+                firingtarget.GetComponent<EnemyStats>().health =- Mathf.Round(damage);
+            }
+            else
+            {
+                foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, enemyMask))
+                {
+                    firingtarget.GetComponent <EnemyStats>().health =- Mathf.Round(damage);
+                }
+            }
+
+            yield return new WaitForSeconds(10.0f / attackrate);
+
+            StartCoroutine(Fire());
         }
+        else
+        {
+            yield return new WaitForSeconds(0.2f);
+
+
+
+            StartCoroutine(Fire());
+        }
+
+        
 
     }
 
