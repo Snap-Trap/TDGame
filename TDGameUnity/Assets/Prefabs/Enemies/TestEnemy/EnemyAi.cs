@@ -19,6 +19,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        walkpointSet = false;
         whatIsPath = LayerMask.GetMask("pathLayer");
         enemyDestination = GameObject.Find("EnemyDestination").transform.position;
         agent = GetComponent<NavMeshAgent>();
