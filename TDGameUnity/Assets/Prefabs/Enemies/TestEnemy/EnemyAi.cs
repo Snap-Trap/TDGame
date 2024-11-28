@@ -56,7 +56,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         enemyStats.health -= damage;
         if (enemyStats.health <= 0)
