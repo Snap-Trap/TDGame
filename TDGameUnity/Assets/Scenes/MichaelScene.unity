@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyLuca
       objectReference: {fileID: 0}
+    - target: {fileID: 4569324600290437491, guid: d85ada68e6b6c1748bebd222c77d2af2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
