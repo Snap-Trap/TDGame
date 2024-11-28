@@ -496,29 +496,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa075fc8531fab84483e7657b2b9d477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 3
+  countdown: 1
   spawnPoint: {fileID: 533769586}
   waves:
   - enemies:
-    - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
-    - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
-    - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
+    - {fileID: -7541663390082486836, guid: d85ada68e6b6c1748bebd222c77d2af2, type: 3}
+    - {fileID: -7541663390082486836, guid: d85ada68e6b6c1748bebd222c77d2af2, type: 3}
     timeToNextEnemy: 1
-    timeToNextWave: 2
+    timeToNextWave: 0
     enemiesCount: 0
   - enemies:
-    - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
-    - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
-    - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
+    - {fileID: -7541663390082486836, guid: d85ada68e6b6c1748bebd222c77d2af2, type: 3}
     timeToNextEnemy: 1
-    timeToNextWave: 2
+    timeToNextWave: 0
     enemiesCount: 0
-  - enemies:
-    - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
-    - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
-    - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
-    timeToNextEnemy: 1
-    timeToNextWave: 2
+  - enemies: []
+    timeToNextEnemy: 0
+    timeToNextWave: 0
     enemiesCount: 0
   currentWave: 0
 --- !u!1001 &1167185902
