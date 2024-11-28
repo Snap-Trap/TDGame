@@ -7,7 +7,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
 {
     EnemyStats enemyStats;
 
-    private float distanceTraveled;
+    public float distanceTraveled;
 
     private Vector3 walkPoint, enemyDestination;
 
