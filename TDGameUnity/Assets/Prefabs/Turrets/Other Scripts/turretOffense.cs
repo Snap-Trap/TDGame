@@ -104,8 +104,7 @@ public class turretOffense : turretBase
         attackrate = baseAttackRate * highestMagnification;
 
 
-        boosters = null;
-
+        
         highestMagnification = 1;
 
         yield return new WaitForSeconds(1.0f);

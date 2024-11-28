@@ -10,8 +10,7 @@ public class lineScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Positions[1] = new Vector3(0, 0, 0);
-        Positions[2] = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Positions = new Vector3[] {new Vector3(0,0,0), new Vector3(transform.position.x, transform.position.y, transform.position.z)};
     }
 
     // Update is called once per frame
