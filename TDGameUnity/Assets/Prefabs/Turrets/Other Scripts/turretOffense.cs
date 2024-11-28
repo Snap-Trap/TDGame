@@ -79,7 +79,7 @@ public class turretOffense : turretBase
     protected GameObject getToughest(float range)
     {
         GameObject furthestTarget = null;
-        int highestHealth = 0;
+        float highestHealth = 0;
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
