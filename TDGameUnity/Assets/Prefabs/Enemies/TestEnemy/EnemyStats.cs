@@ -6,5 +6,5 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     public float speed;
-    public int health;
+    public float health;
 }
