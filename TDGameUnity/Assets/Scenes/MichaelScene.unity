@@ -311,22 +311,22 @@ MonoBehaviour:
     - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
     - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
     - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
-    timeToNextEnemy: 2
-    timeToNextWave: 10
+    timeToNextEnemy: 1
+    timeToNextWave: 2
     enemiesCount: 0
   - enemies:
     - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
     - {fileID: 4978050012273118346, guid: f6c3a67b746ffe747a8c3472aab648bd, type: 3}
     - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
-    timeToNextEnemy: 2
-    timeToNextWave: 4
+    timeToNextEnemy: 1
+    timeToNextWave: 2
     enemiesCount: 0
   - enemies:
     - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
     - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
     - {fileID: 6236264634359598792, guid: 2f1eb75e781d4e649813f90d3e26583e, type: 3}
-    timeToNextEnemy: 2
-    timeToNextWave: 30
+    timeToNextEnemy: 1
+    timeToNextWave: 2
     enemiesCount: 0
   currentWave: 0
 --- !u!1 &1540827391
