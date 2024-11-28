@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1189132609884452384}
   - component: {fileID: 8190142573900993894}
   - component: {fileID: 871285279948653836}
-  - component: {fileID: 3537195305825472514}
+  - component: {fileID: -4564648784577169313}
   m_Layer: 8
   m_Name: walkerL1
   m_TagString: Untagged
@@ -108,7 +108,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
---- !u!114 &3537195305825472514
+--- !u!114 &-4564648784577169313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4056367787699946915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87375667e39e82d43b75e4f96e72ffd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d41a74606affa48a820eeba8760341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkpointSet: 0
