@@ -6,16 +6,24 @@ using UnityEngine;
 
 public class turretOffense : turretBase
 {
-    [SerializeField] protected int attackrate;
+    public float highestMagnification;
+
     [SerializeField] protected int blastradius;
-    [SerializeField] protected int damage;
 
     [SerializeField] protected bool explosive;
 
+    [SerializeField] protected float baseAttackRate;
+    [SerializeField] protected float baseDamage;
+    
     [SerializeField] protected LayerMask enemyMask;
 
     protected bool canFire = true;
     protected bool canShoot;
+
+    protected float attackrate;
+    protected float damage;
+
+    protected List<GameObject> boosters = new List<GameObject>();
 
     
 
@@ -25,7 +33,7 @@ public class turretOffense : turretBase
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -34,7 +42,7 @@ public class turretOffense : turretBase
         
     }
 
-    protected GameObject getFirst(int range)
+    protected GameObject getFirst(float range)
     {
         GameObject furthestTarget = null;
         int furthestdistance = 1000000000;
@@ -52,7 +60,7 @@ public class turretOffense : turretBase
         return furthestTarget;
     }
 
-    protected GameObject getLast(int range)
+    protected GameObject getLast(float range)
     {
         GameObject furthestTarget = null;
         int furthestdistance = 0;
@@ -68,7 +76,7 @@ public class turretOffense : turretBase
         }
         return furthestTarget;
     }
-    protected GameObject getToughest(int range)
+    protected GameObject getToughest(float range)
     {
         GameObject furthestTarget = null;
         int highestHealth = 0;
@@ -86,6 +94,24 @@ public class turretOffense : turretBase
         return furthestTarget;
     }
 
+
+
+    IEnumerator ApplyBoosts()
+    {
+
+        damage = baseDamage * highestMagnification;
+        range = baseRange * highestMagnification;
+        attackrate = baseAttackRate * highestMagnification;
+
+
+        boosters = null;
+
+        highestMagnification = 1;
+
+        yield return new WaitForSeconds(1.0f);
+
+        StartCoroutine(ApplyBoosts());
+    }
     IEnumerator Fire()
     {
         Debug.Log("Firing");
@@ -111,13 +137,13 @@ public class turretOffense : turretBase
 
                 if (!explosive)
                 {
-                    firingtarget.GetComponent<EnemyStats>().health = -damage;
+                    firingtarget.GetComponent<EnemyStats>().health =- Mathf.Round(damage);
                 }
                 else
                 {
                     foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, 1 << 8))
                     {
-                        firingtarget.GetComponent <EnemyStats>().health = -damage;
+                        firingtarget.GetComponent <EnemyStats>().health =- Mathf.Round(damage);
                     }
                 }
 

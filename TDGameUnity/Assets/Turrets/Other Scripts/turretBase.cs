@@ -5,7 +5,9 @@ using UnityEngine;
 public class turretBase : MonoBehaviour
 {
 
-    [SerializeField] protected int range;
+    [SerializeField] protected float baseRange;
+    
+    protected float range;
     
     protected int costLevel1;
     protected int costLevel2;

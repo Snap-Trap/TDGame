@@ -9,6 +9,7 @@ public class turretShortRange : turretOffense
     void Start()
     {
         StartCoroutine("Fire");
+        StartCoroutine("ApplyBoosts");
     }
 
     // Update is called once per frame

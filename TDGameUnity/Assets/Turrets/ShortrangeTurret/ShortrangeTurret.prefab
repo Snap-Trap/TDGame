@@ -120,9 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d57e5b7777c530408c411713c863977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 8
-  attackrate: 20
-  damage: 1
-  explosive: 0
+  baseRange: 8
+  highestMagnification: 1
   blastradius: 0
+  explosive: 0
+  baseAttackRate: 20
+  baseDamage: 1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
   firingMode: 0
