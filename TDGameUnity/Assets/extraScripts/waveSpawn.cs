@@ -6,7 +6,6 @@ public class waveSpawn : MonoBehaviour
 {
     [SerializeField] private float countdown;
     [SerializeField] private GameObject spawnPoint;
-
     public Wave[] waves;
 
     public int currentWave = 0;
@@ -52,7 +51,7 @@ public class waveSpawn : MonoBehaviour
             Debug.Log("Spawning wave: " + currentWave);
             for (int i = 0; i < waves[currentWave].enemies.Length; i++)
             {
-                walkForeward enemy = Instantiate(waves[currentWave].enemies[i], spawnPoint.transform);
+                EnemyAi2 enemy = Instantiate(waves[currentWave].enemies[i], spawnPoint.transform);
                 enemy.transform.SetParent(spawnPoint.transform);
                 Debug.Log("Spawned enemy: " + i);
                 yield return new WaitForSeconds(waves[currentWave].timeToNextEnemy);
@@ -63,7 +62,7 @@ public class waveSpawn : MonoBehaviour
 [System.Serializable]
 public class Wave
 {
-    public walkForeward[] enemies;
+    public EnemyAi2[] enemies;
     public float timeToNextEnemy;
     public float timeToNextWave;
 
