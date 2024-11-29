@@ -25,4 +25,7 @@ public class lineScript : MonoBehaviour
     }
 
     private void Fire()
+    {
+
+    }
 }
