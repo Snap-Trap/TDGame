@@ -1446,7 +1446,7 @@ MonoBehaviour:
     - {fileID: 1239336678260133162, guid: 3add242bc4bec6947aee632b31f8a3b7, type: 3}
     - {fileID: 1239336678260133162, guid: 3add242bc4bec6947aee632b31f8a3b7, type: 3}
     timeToNextEnemy: 2
-    timeToNextWave: 10
+    timeToNextWave: 1
     enemiesCount: 1
   currentWave: 0
 --- !u!4 &2112426583
