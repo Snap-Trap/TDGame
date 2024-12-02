@@ -34,7 +34,7 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
     {
         distanceTraveled += agent.velocity.magnitude * Time.deltaTime;
 
-        Debug.Log(distanceTraveled);
+        //Debug.Log(distanceTraveled);
 
         if (!walkpointSet)
         {
