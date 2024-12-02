@@ -2618,6 +2618,7 @@ MonoBehaviour:
     - {fileID: -5359360436088663912, guid: 0bfbb028f47b90a4c8533b387bcf40d2, type: 3}
     - {fileID: 1239336678260133162, guid: 3add242bc4bec6947aee632b31f8a3b7, type: 3}
     - {fileID: 1239336678260133162, guid: 3add242bc4bec6947aee632b31f8a3b7, type: 3}
+    - {fileID: -5359360436088663912, guid: 0bfbb028f47b90a4c8533b387bcf40d2, type: 3}
     timeToNextEnemy: 2
     timeToNextWave: 1
     enemiesCount: 1
