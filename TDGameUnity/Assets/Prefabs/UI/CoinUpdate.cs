@@ -6,15 +6,12 @@ using UnityEngine.UI;
 
 public class CoinUpdate : MonoBehaviour
 {
-    public ManagerScript managerScript;
-    private int coins;
-    [SerializeField]
-    private TextMeshProUGUI coinText;
+    public int coins;
+    [SerializeField] private TextMeshProUGUI coinText;
     void Start()
     {
         //coinText = GetComponent<Text>();
-        coins = managerScript.Coins;
-        Debug.Log(coins);
+        Debug.Log("Coins: " + coins);
     }
 
     void Update()
