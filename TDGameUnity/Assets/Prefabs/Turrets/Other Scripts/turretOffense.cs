@@ -30,17 +30,7 @@ public class turretOffense : turretBase
     private LayerMask whatIsEnemy;
 
     [SerializeField] protected int firingMode;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     protected GameObject getFirst(float range)
     {
@@ -49,9 +39,9 @@ public class turretOffense : turretBase
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
-            if (target.gameObject.GetComponent<EnemyAi>().distanceTraveled < furthestdistance)
+            if (target.gameObject.GetComponent<EnemyAi2>().distanceTraveled < furthestdistance)
             {
-                    furthestdistance = target.gameObject.GetComponent<EnemyAi>().distanceTraveled;
+                    furthestdistance = target.gameObject.GetComponent<EnemyAi2>().distanceTraveled;
                     furthestTarget = target.gameObject;
                     
             }
@@ -66,7 +56,7 @@ public class turretOffense : turretBase
         float furthestdistance = 0;
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
-            if (target.gameObject.GetComponent<EnemyAi>().distanceTraveled > furthestdistance)
+            if (target.gameObject.GetComponent<EnemyAi2>().distanceTraveled > furthestdistance)
             {
                 furthestdistance = target.gameObject.GetComponent<EnemyAi>().distanceTraveled;
                 furthestTarget = target.gameObject;
@@ -135,13 +125,13 @@ public class turretOffense : turretBase
 
             if (!explosive)
             {
-                firingtarget.GetComponent<EnemyStats>().health =- Mathf.Round(damage);
+                firingtarget.GetComponent<EnemyAi2>().TakeDamage(damage);
             }
             else
             {
                 foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, enemyMask))
                 {
-                    firingtarget.GetComponent <EnemyStats>().health =- Mathf.Round(damage);
+                    target.GetComponent<EnemyAi2>().TakeDamage(damage);
                 }
             }
 
