@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8704050035443060561}
   - component: {fileID: 8562428617458210872}
   - component: {fileID: 1234744154790609398}
+  - component: {fileID: -41188648712487645}
   m_Layer: 9
   m_Name: Testturret
   m_TagString: Untagged
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-41188648712487645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033310591612272587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a770f1be5deb6f4b90a5ad44f915ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercost: 600

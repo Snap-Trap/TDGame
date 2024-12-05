@@ -9,6 +9,7 @@ public class towerButtons : MonoBehaviour
     [SerializeField] private GameObject PlayerCamera;
     private GameObject PLacingTower;
     [SerializeField] private int towerCost;
+    //private turretBase turretBase;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class towerButtons : MonoBehaviour
     {
         if (PLacingTower != null)
         {
-            
+
             Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(camray, out hitInfo, 100f))
@@ -28,14 +29,14 @@ public class towerButtons : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
             {
-                if (hitInfo.collider.gameObject.tag != "cantplace")
+                //if (hitInfo.collider.gameObject.tag != "cantplace")
+                //{
+                if (coinUpdate.coins >= towerCost)
                 {
-                    if (coinUpdate.coins >= towerCost)
-                    {
-                        coinUpdate.coins -= towerCost;;
-                        PLacingTower = null;
-                    }
+                    coinUpdate.coins -= towerCost;
+                    PLacingTower = null;
                 }
+                //}
             }
         }
     }

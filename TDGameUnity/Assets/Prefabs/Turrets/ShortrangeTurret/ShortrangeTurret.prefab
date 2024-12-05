@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1189680137387123239}
   - component: {fileID: 6524845420988903128}
   - component: {fileID: 1790258143453057645}
+  - component: {fileID: -3101000697518516836}
   m_Layer: 0
   m_Name: ShortrangeTurret
   m_TagString: Untagged
@@ -130,3 +131,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   firingMode: 0
+--- !u!114 &-3101000697518516836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884471637041019557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a770f1be5deb6f4b90a5ad44f915ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercost: 300

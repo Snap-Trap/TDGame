@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinUpdate: {fileID: 435612592}
   PlayerCamera: {fileID: 963194225}
+  towerCost: 400
 --- !u!1 &672152268
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +413,7 @@ MonoBehaviour:
         m_MethodName: SetTowerLocation
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6033310591612272587, guid: f8f6567a9047f844abfdda0799ccefa7, type: 3}
+          m_ObjectArgument: {fileID: 1884471637041019557, guid: 3c4fc913b72ec7b4b8416989b3036d81, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -514,7 +515,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DmgLong
+  m_text: 'DmgLong
+
+    500'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -767,7 +770,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 866696824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 435612593}
+        m_TargetAssemblyTypeName: towerButtons, Assembly-CSharp
+        m_MethodName: SetTowerLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2776777790889861238, guid: ca5a81c8641a16844858ff54e0aaf4d6, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &866696824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,7 +1108,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: support tower
+  m_text: 'support tower
+
+    950'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2117,7 +2134,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DmgClose
+  m_text: 'DmgClose
+
+    300'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2540,7 +2559,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2107060135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 435612593}
+        m_TargetAssemblyTypeName: towerButtons, Assembly-CSharp
+        m_MethodName: SetTowerLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6033310591612272587, guid: f8f6567a9047f844abfdda0799ccefa7, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2107060135
 MonoBehaviour:
   m_ObjectHideFlags: 0
