@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyAi2 : MonoBehaviour, IDamageable
 {
-    EnemyStats enemyStats;
+    public EnemyStats enemyStats;
 
     public float distanceTraveled;
 
@@ -27,7 +27,6 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();
         //---------------------
         wavespawn = GetComponentInParent<waveSpawn>();
-
     }
 
     private void Update()
