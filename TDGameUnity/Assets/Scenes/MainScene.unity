@@ -2505,6 +2505,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187931369809192964, guid: d7648b2977178e14f87a345feaafdf52, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187931369809192964, guid: d7648b2977178e14f87a345feaafdf52, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3131,7 +3139,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.23333333
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9b45980d619a95f46b5efc61f3124137, type: 2}
   m_BuildHeightMesh: 0
@@ -3934,6 +3942,6 @@ SceneRoots:
   - {fileID: 2112426583}
   - {fileID: 1793802911}
   - {fileID: 435612591}
-  - {fileID: 1016136822}
   - {fileID: 212203217}
   - {fileID: 820825633}
+  - {fileID: 1016136822}

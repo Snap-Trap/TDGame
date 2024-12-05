@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a74606affa48a820eeba8760341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 0}
+  distanceTraveled: 0
   walkpointSet: 0
 --- !u!1001 &1696134668360512078
 PrefabInstance:
