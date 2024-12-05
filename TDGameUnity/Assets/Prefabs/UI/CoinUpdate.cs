@@ -11,11 +11,11 @@ public class CoinUpdate : MonoBehaviour
     void Start()
     {
         //coinText = GetComponent<Text>();
-        Debug.Log("Coins: " + coins);
-    }
+        }
 
     void Update()
     {
         coinText.text = "Coins: " + coins;
+        Debug.Log("Coins: " + coins);
     }
 }
