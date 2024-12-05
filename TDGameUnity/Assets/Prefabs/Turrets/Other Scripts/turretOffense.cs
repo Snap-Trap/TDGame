@@ -6,15 +6,18 @@ using UnityEngine;
 
 public class turretOffense : turretBase
 {
-    public float highestMagnification;
+    [SerializeField] protected float[] attackrateLevels;
+    [SerializeField] protected int[] damageLevels;
 
-    [SerializeField] protected int blastradius;
+    public float highestMagnification;
 
     [SerializeField] protected bool explosive;
 
     [SerializeField] protected float baseAttackRate;
     [SerializeField] protected float baseDamage;
-    
+
+    [SerializeField] protected int blastradius;
+
     [SerializeField] protected LayerMask enemyMask;
 
     protected bool canFire = true;
@@ -36,6 +39,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         float furthestdistance = 1000000000;
+
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
@@ -54,6 +58,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         float furthestdistance = 0;
+
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
             if (target.gameObject.GetComponent<EnemyAi2>().distanceTraveled > furthestdistance)
@@ -70,6 +75,7 @@ public class turretOffense : turretBase
     {
         GameObject furthestTarget = null;
         float highestHealth = 0;
+
         foreach (Collider target in Physics.OverlapSphere(transform.position, range, enemyMask))
         {
 
@@ -122,16 +128,24 @@ public class turretOffense : turretBase
             {
                 firingtarget = getFirst(range);
             }
+            Vector3 dir = firingtarget.transform.position - gameObject.transform.position;
+            Debug.Log("rotating");
+            Quaternion rotation = Quaternion.Euler(transform.rotation.x, dir.y, transform.rotation.z);
+            Quaternion childrotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dir.z);
 
+            transform.rotation = Quaternion.Euler(0, dir.y, 0);
+            transform.GetChild(0).rotation = childrotation;
+
+ 
             if (!explosive)
             {
-                firingtarget.GetComponent<EnemyAi2>().TakeDamage(damage);
+                firingtarget.GetComponent<IDamageable>().TakeDamage(damage);
             }
             else
             {
                 foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, enemyMask))
                 {
-                    target.GetComponent<EnemyAi2>().TakeDamage(damage);
+                    target.GetComponent<IDamageable>().TakeDamage(damage);
                 }
             }
 
@@ -142,8 +156,6 @@ public class turretOffense : turretBase
         else
         {
             yield return new WaitForSeconds(0.2f);
-
-
 
             StartCoroutine(Fire());
         }

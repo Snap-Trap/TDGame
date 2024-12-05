@@ -8,84 +8,46 @@ public class lineScript : MonoBehaviour
 {
     public bool thickening;
 
+    public GameObject target;
+
     private bool firing;
     public float width;
 
     private Vector3[] Positions;
+
+    private LineRenderer lineRenderer;
     // Start is called before the first frame update
     void Start()
     {
         width = 0;
-        GetComponent<LineRenderer>().SetWidth(0, 0);
+
+        lineRenderer = GetComponent<LineRenderer>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Positions = new Vector3[] { new Vector3(0, 0, 0), new Vector3(transform.position.x, transform.position.y, transform.position.z) };
+        Positions = new Vector3[] { new Vector3(0, 0, 0), target.transform.position };
 
-        GetComponent<LineRenderer>().SetPositions(Positions);
+        lineRenderer.SetPositions(Positions);
 
 
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-
-            for (int i = 0; i < 200; i++)
-            {
-                if (thickening)
-                {
-                    Debug.Log(width);
-                    width += 0.01f;
-                    GetComponent<LineRenderer>().SetWidth(width, width);
-                    if (width > 1)
-                    {
-                        thickening = false;
-                    }
-                }
-
-                if (!thickening)
-                {
-                    width -= 0.01f;
-                    GetComponent<LineRenderer>().SetWidth(width, width);
-                    if (width < 0)
-                    {
-                        thickening = true;
-                    }
-                }
-            }
-        }
-        if (firing)
-        {
-
+            StartCoroutine(Fire());   
         }
         
     }
 
-    private void Fire()
+    IEnumerator Fire()
     {
-        for (int i = 0; i < 200;  i++)
-        {
-            if (thickening)
-            {
-                Debug.Log(width);
-                width += 0.01f;
-                GetComponent<LineRenderer>().SetWidth(width, width);
-                if (width > 1)
-                {
-                    thickening = false;
-                }
-            }
+        lineRenderer.SetWidth(0.5f, 0.5f);
 
-            if (!thickening)
-            {
-                width -= 0.01f;
-                GetComponent<LineRenderer>().SetWidth(width, width);
-                if (width < 0)
-                {
-                    thickening = true;
-                }
-            }
-        }
+        yield return new WaitForSeconds(0.3f);
+
+        lineRenderer.SetWidth(0, 0);
     }
 }

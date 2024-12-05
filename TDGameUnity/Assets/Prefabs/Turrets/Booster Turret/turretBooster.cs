@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turretBooster : turretBase
+public class turretBooster : turretBase, IUpgradeable
 {
+    [SerializeField] protected int[] magnificationLevels;
 
     public float statMagnification;
 
     [SerializeField] protected LayerMask towerMask;
-
     
     // Start is called before the first frame update
     void Start()
@@ -39,5 +39,10 @@ public class turretBooster : turretBase
         yield return new WaitForSeconds(1);
 
         StartCoroutine(Boost());
+    }
+
+    public void Upgrade()
+    {
+        level++;
     }
 }
