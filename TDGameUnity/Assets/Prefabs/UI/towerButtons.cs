@@ -11,6 +11,7 @@ public class towerButtons : MonoBehaviour
     [SerializeField] private GameObject PlayerCamera;
     private GameObject PLacingTower;
     [SerializeField] private int towerCost;
+    public LayerMask whatIsGround;
     //private turretBase turretBase;
 
     void Start()
@@ -22,23 +23,27 @@ public class towerButtons : MonoBehaviour
     {
         if (PLacingTower != null)
         {
+            // Makes the mouse only see the layer to prevent the mouse to contniuosly go up on the collision
 
-            Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(camray, out hitInfo, 100f))
+            if (PLacingTower.layer == whatIsGround)
             {
-                PLacingTower.transform.position = hitInfo.point;
-            }
-            if (click.triggered && hitInfo.collider.gameObject.CompareTag("groundTag"))
-            {
-                //if (hitInfo.collider.gameObject.tag != "cantplace")
-                //{
-                if (coinUpdate.coins >= towerCost)
+                Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hitInfo;
+                if (Physics.Raycast(camray, out hitInfo, 100f))
                 {
-                    coinUpdate.coins -= towerCost;
-                    PLacingTower = null;
+                    PLacingTower.transform.position = hitInfo.point;
                 }
-                //}
+                if (click.triggered && hitInfo.collider.gameObject != null)
+                {
+                    //if (hitInfo.collider.gameObject.tag != "cantplace")
+                    //{
+                    if (coinUpdate.coins >= towerCost)
+                    {
+                        coinUpdate.coins -= towerCost;
+                        PLacingTower = null;
+                    }
+                    //}
+                }
             }
         }
     }
