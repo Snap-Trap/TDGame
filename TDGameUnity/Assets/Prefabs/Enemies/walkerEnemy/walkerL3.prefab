@@ -96,7 +96,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 28
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 70
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceTraveled: 0
-  health: 15
+  health: 8
   coinDrop: 150
   baseDamage: 60
   walkpointSet: 0
