@@ -19,6 +19,5 @@ public class CoinUpdate : MonoBehaviour
     {
         healthText.text = "Health: " + gameOverScript.baseHealth;
         coinText.text = "Coins: " + coins;
-        Debug.Log("Coins: " + coins);
     }
 }

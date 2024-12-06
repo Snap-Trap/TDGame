@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScherm.unity
     guid: 1084c113b88c327469cbb2deead1015a
+  - enabled: 1
+    path: Assets/Scenes/ScuffedScene.unity
+    guid: 029cda7bf62705f44bd49dd188cf16a7
   m_configObjects: {}

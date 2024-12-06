@@ -35,8 +35,6 @@ public class pauseMenu : MonoBehaviour
     public void Reset(int buildindex)
     {
         SceneManager.LoadScene(buildindex);
-        WaveSpawn.currentWave = 0;
-        WaveSpawn.readyToCountdown = true;
     }
 
     public void QuitGame()

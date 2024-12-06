@@ -61,6 +61,7 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("EndOfPath"))
         {
+            gameOverScript.baseHealth -= baseDamage;
             StartCoroutine(WaitBeforeDestroy());
         }
     }
@@ -71,7 +72,6 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             coinUpdate.coins += coinDrop;
-            gameOverScript.baseHealth -= baseDamage;
             Destroy(gameObject);
             Debug.Log("THY END IS NOW!!!");
             //---------------------

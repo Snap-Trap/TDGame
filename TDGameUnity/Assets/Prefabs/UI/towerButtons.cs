@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class towerButtons : MonoBehaviour
 {
+    public InputAction click;
     public CoinUpdate coinUpdate;
     [SerializeField] private GameObject PlayerCamera;
     private GameObject PLacingTower;
@@ -27,7 +29,7 @@ public class towerButtons : MonoBehaviour
             {
                 PLacingTower.transform.position = hitInfo.point;
             }
-            if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject.CompareTag("groundTag"))
+            if (click.triggered && hitInfo.collider.gameObject.CompareTag("groundTag"))
             {
                 //if (hitInfo.collider.gameObject.tag != "cantplace")
                 //{
@@ -43,5 +45,15 @@ public class towerButtons : MonoBehaviour
     public void SetTowerLocation(GameObject tower)
     {
         PLacingTower = Instantiate(tower, Vector3.zero, Quaternion.identity);
+    }
+
+    void OnEnable()
+    {
+        click.Enable();
+    }
+
+    void OnDisable()
+    {
+        click.Disable();
     }
 }
