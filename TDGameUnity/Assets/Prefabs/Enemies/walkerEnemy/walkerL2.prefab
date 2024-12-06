@@ -123,6 +123,7 @@ MonoBehaviour:
   distanceTraveled: 0
   health: 4
   coinDrop: 75
+  baseDamage: 30
   walkpointSet: 0
 --- !u!1001 &1696134668360512078
 PrefabInstance:

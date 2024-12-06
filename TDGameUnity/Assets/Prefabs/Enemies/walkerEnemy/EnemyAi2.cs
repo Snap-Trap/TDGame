@@ -4,11 +4,12 @@ using UnityEngine.AI;
 
 public class EnemyAi2 : MonoBehaviour, IDamageable
 {
+    private gameOverScript gameOverScript;
     private CoinUpdate coinUpdate;
 
     public float distanceTraveled, health;
 
-    public int coinDrop;
+    public int coinDrop, baseDamage;
 
     private Vector3 walkPoint, enemyDestination;
 
@@ -24,6 +25,7 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        gameOverScript = GameObject.Find("EnemyDestination").GetComponent<gameOverScript>();
         coinUpdate = GameObject.Find("Canvas").GetComponent<CoinUpdate>();
         whatIsPath = LayerMask.GetMask("pathLayer");
         enemyDestination = GameObject.Find("EnemyDestination").transform.position;
@@ -69,6 +71,7 @@ public class EnemyAi2 : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             coinUpdate.coins += coinDrop;
+            gameOverScript.baseHealth -= baseDamage;
             Destroy(gameObject);
             Debug.Log("THY END IS NOW!!!");
             //---------------------

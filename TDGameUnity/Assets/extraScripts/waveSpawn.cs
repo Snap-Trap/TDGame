@@ -13,6 +13,7 @@ public class waveSpawn : MonoBehaviour
     public bool readyToCountdown;
     private void Start()
     {
+        currentWave = 0;
         readyToCountdown = true;
         for (int i = 0; i < waves.Length; i++)
             waves[i].enemiesCount = waves[i].enemies.Length;

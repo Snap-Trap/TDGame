@@ -27,7 +27,7 @@ public class towerButtons : MonoBehaviour
             {
                 PLacingTower.transform.position = hitInfo.point;
             }
-            if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
+            if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject.CompareTag("groundTag"))
             {
                 //if (hitInfo.collider.gameObject.tag != "cantplace")
                 //{

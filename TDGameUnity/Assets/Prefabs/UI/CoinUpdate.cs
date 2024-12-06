@@ -6,15 +6,18 @@ using UnityEngine.UI;
 
 public class CoinUpdate : MonoBehaviour
 {
+    public gameOverScript gameOverScript;
     public int coins;
-    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] private TextMeshProUGUI coinText, healthText;
     void Start()
     {
         //coinText = GetComponent<Text>();
-        }
+        gameOverScript = GameObject.Find("EnemyDestination").GetComponent<gameOverScript>();
+    }
 
-    void Update()
+    public void Update()
     {
+        healthText.text = "Health: " + gameOverScript.baseHealth;
         coinText.text = "Coins: " + coins;
         Debug.Log("Coins: " + coins);
     }
