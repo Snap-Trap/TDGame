@@ -45,4 +45,9 @@ public class turretBooster : turretBase, IUpgradeable
     {
         level++;
     }
+    public void Sell()
+    {
+        Destroy(gameObject);
+        GameObject.Find("coinHolder").GetComponent<placeholderCoins>().coins += sellingPrice;
+    }
 }

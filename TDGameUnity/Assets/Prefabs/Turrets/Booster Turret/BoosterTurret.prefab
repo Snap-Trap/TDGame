@@ -117,11 +117,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3699578267374797858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90ad10900b4c004ba05875601ac35ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 10fb9317e27589843bc34802241118eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeCosts: 
+  rangeLevels: 
+  isMaxLevel: 0
+  level: 0
   baseRange: 0
-  statMagnification: 20
+  sellingPrice: 0
+  cost: 0
+  magnificationLevels: 
+  statMagnification: 0
   towerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0

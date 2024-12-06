@@ -20,7 +20,7 @@ public class turretOffense : turretBase
 
     [SerializeField] protected LayerMask enemyMask;
 
-    protected bool canFire = true;
+    public bool canFire = true;
     protected bool canShoot;
 
     protected float attackrate;
@@ -109,56 +109,64 @@ public class turretOffense : turretBase
     }
     IEnumerator Fire()
     {
-        Debug.Log("Firing");
-
-        GameObject firingtarget = null;
-
-        if (Physics.OverlapSphere(transform.position, range, enemyMask).Count() != 0)
+        if (canFire)
         {
 
-            if (firingMode == 1)
-            {
-                firingtarget = getToughest(range);
-            }
-            else if (firingMode == 2)
-            {
-                firingtarget = getLast(range);
-            }
-            else
-            {
-                firingtarget = getFirst(range);
-            }
-            Vector3 dir = firingtarget.transform.position - gameObject.transform.position;
-            Debug.Log("rotating");
-            Quaternion rotation = Quaternion.Euler(transform.rotation.x, dir.y, transform.rotation.z);
-            Quaternion childrotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dir.z);
 
+<<<<<<< Updated upstream
             transform.rotation = Quaternion.Euler(0, dir.y, 0);
+=======
+            Debug.Log("Firing");
+>>>>>>> Stashed changes
 
- 
-            if (!explosive)
+            GameObject firingtarget = null;
+
+            if (Physics.OverlapSphere(transform.position, range, enemyMask).Count() != 0)
             {
-                firingtarget.GetComponent<IDamageable>().TakeDamage(damage);
+
+                if (firingMode == 1)
+                {
+                    firingtarget = getToughest(range);
+                }
+                else if (firingMode == 2)
+                {
+                    firingtarget = getLast(range);
+                }
+                else
+                {
+                    firingtarget = getFirst(range);
+                }
+                Vector3 dir = firingtarget.transform.position - gameObject.transform.position;
+                Debug.Log("rotating");
+                Quaternion rotation = Quaternion.Euler(transform.rotation.x, dir.y, transform.rotation.z);
+                Quaternion childrotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dir.z);
+
+                transform.rotation = Quaternion.Euler(0, dir.y, 0);
+
+
+                if (!explosive)
+                {
+                    firingtarget.GetComponent<IDamageable>().TakeDamage(damage);
+                }
+                else
+                {
+                    foreach (Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, enemyMask))
+                    {
+                        target.GetComponent<IDamageable>().TakeDamage(damage);
+                    }
+                }
+
+                yield return new WaitForSeconds(10.0f / attackrate);
+
+                StartCoroutine(Fire());
             }
             else
             {
-                foreach(Collider target in Physics.OverlapSphere(firingtarget.transform.position, blastradius, enemyMask))
-                {
-                    target.GetComponent<IDamageable>().TakeDamage(damage);
-                }
+                yield return new WaitForSeconds(0.2f);
+
+                StartCoroutine(Fire());
             }
-
-            yield return new WaitForSeconds(10.0f / attackrate);
-
-            StartCoroutine(Fire());
         }
-        else
-        {
-            yield return new WaitForSeconds(0.2f);
-
-            StartCoroutine(Fire());
-        }
-
         
 
     }

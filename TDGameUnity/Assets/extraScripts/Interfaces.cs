@@ -15,4 +15,6 @@ public interface IDamageable
 public interface IUpgradeable
 {
     void Upgrade();
+    void Sell();
 }
+

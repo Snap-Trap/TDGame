@@ -6,7 +6,7 @@ public class turretBase : MonoBehaviour
 {
     public int[] upgradeCosts;
 
-    protected int[] rangeLevels;
+    [SerializeField] protected int[] rangeLevels;
 
     public bool isMaxLevel;
 
@@ -14,8 +14,10 @@ public class turretBase : MonoBehaviour
 
     [SerializeField] protected float baseRange;
 
+    public int sellingPrice;
+
     protected float range;
-    //public int cost;
+    public int cost;
     protected int costLevel1;
     protected int costLevel2;
     protected int costLevel3;
@@ -23,6 +25,7 @@ public class turretBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sellingPrice += Mathf.RoundToInt(cost / 2);
     }
 
     // Update is called once per frame
