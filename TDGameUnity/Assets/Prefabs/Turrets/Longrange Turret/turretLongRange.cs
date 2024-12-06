@@ -20,9 +20,7 @@ public class turretLongRange : turretOffense, IUpgradeable
 
     public void Upgrade()
     {
-        if (GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins >= upgradeCosts[level - 1])
-        {
-            GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins -= upgradeCosts[level - 1];
+        Debug.Log("upgrading");
             sellingPrice += Mathf.RoundToInt(upgradeCosts[level - 1] / 2);
             level++;
             
@@ -38,13 +36,13 @@ public class turretLongRange : turretOffense, IUpgradeable
                 isMaxLevel = true;
             }
            
-        }
+        
     }
 
     public void Sell()
     {
         Debug.Log("Selling");
-        GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins += sellingPrice;
+
         Destroy(this.gameObject);
     }
 }

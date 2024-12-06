@@ -121,15 +121,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa44672d93dd864d8d5b3831099250f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   upgradeCosts: 
   rangeLevels: 
+=======
+  upgradeCosts: 3200000064000000
+  rangeLevels: 0f0000001400000019000000
+>>>>>>> Stashed changes
   isMaxLevel: 0
-  level: 0
+  level: 1
   baseRange: 15
   sellingPrice: 0
+<<<<<<< Updated upstream
   cost: 0
   attackrateLevels: []
   damageLevels: 
+=======
+  cost: 50
+  attackrateLevels:
+  - 3
+  - 4
+  - 5
+  damageLevels: 030000000500000007000000
+>>>>>>> Stashed changes
   highestMagnification: 1
   explosive: 1
   baseAttackRate: 3
