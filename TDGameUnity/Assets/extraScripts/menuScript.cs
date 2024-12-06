@@ -11,9 +11,9 @@ public class menuScript : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
     }
-    public void LoadGame()
+    public void LoadGame(int buildindex)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(buildindex);
     }
 
     public void QuitGame()

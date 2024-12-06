@@ -10,7 +10,7 @@ public class waveSpawn : MonoBehaviour
 
     public int currentWave = 0;
 
-    private bool readyToCountdown;
+    public bool readyToCountdown;
     private void Start()
     {
         readyToCountdown = true;

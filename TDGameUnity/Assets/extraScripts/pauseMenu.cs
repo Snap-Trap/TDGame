@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
 {
+    public waveSpawn WaveSpawn;
     public InputAction pauseButton;
     public GameObject pauseMenuUI;
 
@@ -31,9 +32,11 @@ public class pauseMenu : MonoBehaviour
         }
     }
 
-    public void Reset()
+    public void Reset(int buildindex)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(buildindex);
+        WaveSpawn.currentWave = 0;
+        WaveSpawn.readyToCountdown = true;
     }
 
     public void QuitGame()
