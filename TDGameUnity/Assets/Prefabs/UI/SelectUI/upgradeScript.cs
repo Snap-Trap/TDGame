@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class upgradeScript : MonoBehaviour
 {
     [SerializeField] private GameObject towerPopup;
-    [SerializeField] private GameObject coinUpdater;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +23,7 @@ public class upgradeScript : MonoBehaviour
     public void OnClick()
     {
         GameObject upgradeTarget = towerPopup.GetComponent<towerPopupSystem>().tower;
-        if (!upgradeTarget.GetComponent<turretBase>().isMaxLevel && upgradeTarget.GetComponent<turretBase>().upgradeCosts[upgradeTarget.GetComponent<turretBase>().level - 1] > coinUpdater.GetComponent<CoinUpdate>().coins)
+        if (!upgradeTarget.GetComponent<turretBase>().isMaxLevel)
         {
 
             upgradeTarget.GetComponent<IUpgradeable>().Upgrade();
