@@ -24,8 +24,7 @@ public class upgradeScript : MonoBehaviour
     public void OnClick()
     {
         GameObject upgradeTarget = towerPopup.GetComponent<towerPopupSystem>().tower;
-        Debug.Log(upgradeTarget.GetComponent<turretBase>().upgradeCosts[upgradeTarget.GetComponent<turretBase>().level - 1]);
-        if (!upgradeTarget.GetComponent<turretBase>().isMaxLevel && upgradeTarget.GetComponent<turretBase>().upgradeCosts[upgradeTarget.GetComponent<turretBase>().level - 1] >= coinUpdater.GetComponent<CoinUpdate>().coins)
+        if (!upgradeTarget.GetComponent<turretBase>().isMaxLevel && upgradeTarget.GetComponent<turretBase>().upgradeCosts[upgradeTarget.GetComponent<turretBase>().level - 1] > coinUpdater.GetComponent<CoinUpdate>().coins)
         {
 
             upgradeTarget.GetComponent<IUpgradeable>().Upgrade();
