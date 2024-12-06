@@ -134,7 +134,6 @@ public class turretOffense : turretBase
             Quaternion childrotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dir.z);
 
             transform.rotation = Quaternion.Euler(0, dir.y, 0);
-            transform.GetChild(0).rotation = childrotation;
 
  
             if (!explosive)
