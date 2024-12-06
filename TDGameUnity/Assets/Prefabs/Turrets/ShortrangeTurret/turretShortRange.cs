@@ -17,4 +17,34 @@ public class turretShortRange : turretOffense
     {
 
     }
+
+    public void Upgrade()
+    {
+        if (GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins >= upgradeCosts[level - 1])
+        {
+            GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins -= upgradeCosts[level - 1];
+            sellingPrice += Mathf.RoundToInt(upgradeCosts[level - 1] / 2);
+            level++;
+
+            baseRange = rangeLevels[level - 1];
+            baseDamage = damageLevels[level - 1];
+            baseAttackRate = attackrateLevels[level - 1];
+            range = baseRange * highestMagnification;
+            damage = baseDamage * highestMagnification;
+            attackrate = baseAttackRate * highestMagnification;
+
+            if (level == 3)
+            {
+                isMaxLevel = true;
+            }
+
+        }
+    }
+
+    public void Sell()
+    {
+        Debug.Log("Selling");
+        GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins += sellingPrice;
+        Destroy(this.gameObject);
+    }
 }

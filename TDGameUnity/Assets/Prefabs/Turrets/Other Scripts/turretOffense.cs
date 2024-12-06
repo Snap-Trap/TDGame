@@ -112,12 +112,8 @@ public class turretOffense : turretBase
         if (canFire)
         {
 
-
-<<<<<<< Updated upstream
-            transform.rotation = Quaternion.Euler(0, dir.y, 0);
-=======
             Debug.Log("Firing");
->>>>>>> Stashed changes
+
 
             GameObject firingtarget = null;
 
@@ -136,13 +132,9 @@ public class turretOffense : turretBase
                 {
                     firingtarget = getFirst(range);
                 }
+
                 Vector3 dir = firingtarget.transform.position - gameObject.transform.position;
-                Debug.Log("rotating");
-                Quaternion rotation = Quaternion.Euler(transform.rotation.x, dir.y, transform.rotation.z);
-                Quaternion childrotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dir.z);
-
                 transform.rotation = Quaternion.Euler(0, dir.y, 0);
-
 
                 if (!explosive)
                 {

@@ -43,11 +43,27 @@ public class turretBooster : turretBase, IUpgradeable
 
     public void Upgrade()
     {
-        level++;
+        if (GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins >= upgradeCosts[level - 1])
+        {
+            GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins -= upgradeCosts[level - 1];
+            sellingPrice += Mathf.RoundToInt(upgradeCosts[level - 1] / 2);
+            level++;
+
+            baseRange = rangeLevels[level - 1];
+            statMagnification = magnificationLevels[level - 1];
+
+            if (level == 3)
+            {
+                isMaxLevel = true;
+            }
+
+        }
     }
+
     public void Sell()
     {
-        Destroy(gameObject);
-        GameObject.Find("coinHolder").GetComponent<placeholderCoins>().coins += sellingPrice;
+        Debug.Log("Selling");
+        GameObject.Find("Canvas").GetComponent<CoinUpdate>().coins += sellingPrice;
+        Destroy(this.gameObject);
     }
 }
