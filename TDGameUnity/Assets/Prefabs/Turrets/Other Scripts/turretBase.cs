@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class turretBase : MonoBehaviour
 {
+    public int[] upgradeCosts;
+
+    protected int[] rangeLevels;
+
+    public bool isMaxLevel;
+
+    public int level;
 
     [SerializeField] protected float baseRange;
 
@@ -12,6 +19,7 @@ public class turretBase : MonoBehaviour
     protected int costLevel1;
     protected int costLevel2;
     protected int costLevel3;
+
     // Start is called before the first frame update
     void Start()
     {

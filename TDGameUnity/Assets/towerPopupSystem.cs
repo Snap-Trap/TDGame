@@ -29,9 +29,12 @@ public class towerPopupSystem : MonoBehaviour
             // Check if the mouse was clicked over a UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
+                Debug.Log("clicking");
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                Debug.DrawRay(ray.origin, ray.direction, Color.red);
                 if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity, towerLayer))
-                {        
+                {
+                    Debug.Log("connecting");
                     GameObject upgradeTarget = raycastHit.transform.gameObject;
                     Vector3 targetPosition = upgradeTarget.transform.position;
                     tower = upgradeTarget;
