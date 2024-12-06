@@ -126,7 +126,7 @@ MonoBehaviour:
   level: 0
   baseRange: 0
   sellingPrice: 0
-  cost: 0
+  cost: 600
   magnificationLevels: 
   statMagnification: 0
   towerMask:

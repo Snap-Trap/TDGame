@@ -103,7 +103,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -122,9 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeCosts: 
+  rangeLevels: 
   isMaxLevel: 0
   level: 0
   baseRange: 15
+  sellingPrice: 0
+  cost: 0
   attackrateLevels: []
   damageLevels: 
   highestMagnification: 1
@@ -135,6 +138,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 256
+  canFire: 1
   firingMode: 0
 --- !u!114 &2729328760252104159
 MonoBehaviour:
@@ -148,4 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a770f1be5deb6f4b90a5ad44f915ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towercost: 500
+  towercost: 350

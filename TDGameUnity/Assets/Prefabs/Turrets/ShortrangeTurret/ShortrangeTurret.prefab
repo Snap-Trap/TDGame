@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6524845420988903128}
   - component: {fileID: 1790258143453057645}
   - component: {fileID: -3101000697518516836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShortrangeTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,9 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeCosts: 
+  rangeLevels: 
   isMaxLevel: 0
   level: 0
   baseRange: 8
+  sellingPrice: 0
+  cost: 0
   attackrateLevels: []
   damageLevels: 
   highestMagnification: 1
@@ -135,6 +138,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 256
+  canFire: 1
   firingMode: 0
 --- !u!114 &-3101000697518516836
 MonoBehaviour:
